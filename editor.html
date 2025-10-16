@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article Editor - Islam Hasanov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <div id="passwordPrompt" class="password-prompt">
+      <div class="password-box">
+        <h2>Editor Login</h2>
+        <p>Enter password to access the article editor</p>
+        <input type="password" id="passwordInput" placeholder="Enter password" />
+        <button id="passwordSubmit" class="button primary">Unlock</button>
+        <p id="passwordError" class="password-error"></p>
+      </div>
+    </div>
+    <div class="page-shell" id="editorContent" style="display: none;">
+      <header class="editor-header">
+        <div class="editor-header-inner">
+          <h1>Article Editor</h1>
+          <a href="index.html" class="button outline">← Back to Blog</a>
+        </div>
+      </header>
+
+      <main class="editor-main">
+        <div class="editor-container">
+          <form id="articleForm" class="article-form">
+            <div class="form-group">
+              <label for="articleTitle">Article Title</label>
+              <input
+                type="text"
+                id="articleTitle"
+                name="title"
+                placeholder="Enter article title"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="articlePreview">Preview Text</label>
+              <textarea
+                id="articlePreview"
+                name="preview"
+                rows="3"
+                placeholder="Short preview of the article"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="articleContent">Article Content</label>
+              <textarea
+                id="articleContent"
+                name="content"
+                rows="15"
+                placeholder="Write your article here..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="articleDate">Publication Date</label>
+              <input
+                type="date"
+                id="articleDate"
+                name="date"
+                required
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="saveDraftBtn" class="button outline">Save as Draft</button>
+              <button type="submit" class="button primary">Publish Article</button>
+              <button type="button" id="clearBtn" class="button outline">Clear Form</button>
+            </div>
+          </form>
+
+          <div class="saved-articles">
+            <h2>Saved Articles</h2>
+            <div id="articlesList" class="articles-list-editor">
+              <!-- Articles will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="editor.js"></script>
+  </body>
+</html>
